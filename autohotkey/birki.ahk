@@ -3,8 +3,9 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-; AutoHotkey script file for Windows Systems
-; Add keybinds below to call scripts or other functions from your upgraded-waffle
+;
+; AutoHotkey script file for Birki
+;
 
 ^!NumpadIns::
 MsgBox, 0
