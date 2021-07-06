@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+    qmk_firmware:
+        container_name: qmk_firmware
+        build: .
+        volumes: 
+          - ./:/output:rw
