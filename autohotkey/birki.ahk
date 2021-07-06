@@ -3,6 +3,9 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+; AutoHotkey script file for Windows Systems
+; Add keybinds below to call scripts or other functions from your upgraded-waffle
+
 ^!NumpadIns::
 MsgBox, 0
 return
@@ -16,7 +19,7 @@ MsgBox, 2
 return
 
 ^!NumpadPgDn::
-MsgBox, 3
+Run brave.exe "https://github.com/grantbirki/"
 return
 
 ^!NumpadLeft::
@@ -35,9 +38,10 @@ return
 MsgBox, 7
 return
 
-^!NumpadUp::
-MsgBox, 8
-return
+; Disabled
+; ^!NumpadUp::
+; MsgBox, 8
+; return
 
 ^!NumpadPgUp::
 MsgBox, 9
