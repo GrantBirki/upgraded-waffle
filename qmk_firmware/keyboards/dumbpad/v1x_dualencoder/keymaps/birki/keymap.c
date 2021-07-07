@@ -201,16 +201,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case KEY_12:
         if (record->event.pressed) {
             // when keycode KEY_12 is pressed
-            register_code(KC_LCTL);
-            register_code(KC_LALT);
-            register_code(KC_LSFT);
-            register_code(KC_P2);
+            register_code(KC_MPLY);
         } else {
             // when keycode KEY_12 is released
-            unregister_code(KC_LCTL);
-            unregister_code(KC_LALT);
-            unregister_code(KC_LSFT);
-            unregister_code(KC_P2);
+            unregister_code(KC_MPLY);
         }
         break;
     case KEY_13:
@@ -281,7 +275,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*
             BASE LAYER
     /-----------------------------------------------------`
-    |             |  KEY_12 |  KEY_1  |  KEY_14 |  KEY_15 |
+    |             |  KEY_12 |  KEY_1  |  KEY_14 |  TO(1)  |
     |             |---------|---------|---------|---------|
     |             |  KEY_8  |  KEY_9  |  KEY_10 |  KEY_11 |
     |             |---------|---------|---------|---------|
@@ -291,10 +285,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     \-----------------------------------------------------'
     */
     [0] = LAYOUT(
-                     KEY_12,    KEY_13,   KEY_14,   KEY_15,
+                     KEY_12,    KEY_13,   KEY_14,   TO(1),
                      KEY_8,     KEY_9,    KEY_10,   KEY_11,
                      KEY_4,     KEY_5,    KEY_6,    KEY_7,
         KEY_16,      KEY_0,     KEY_1,    KEY_2,    KEY_3
+    ),
+    /*
+            SUB LAYER
+    /-----------------------------------------------------`
+    |             |         |         |         |  TO(0)  |
+    |             |---------|---------|---------|---------|
+    |             |         |         |         |         |
+    |             |---------|---------|---------|---------|
+    |             |         |         |         |         |
+    |-------------|---------|---------|---------|---------|
+    |     KC_1    |         |         |         |         |
+    \-----------------------------------------------------'
+    */
+    [1] = LAYOUT(
+                    _______,     _______,     _______,      TO(0),
+                    _______,     _______,     _______,      _______,
+                    _______,     _______,     _______,      _______,
+        KC_1,       _______,     _______,     _______,      _______
     ),
 };
 
@@ -329,13 +341,13 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
             case 0:
                 // main layer - move mouse right (CW) and left (CCW)
                 if (clockwise) {
-                    tap_code(KC_BRIU);
+                    tap_code(KC_VOLU);
                 } else {
-                    tap_code(KC_BRID);
+                    tap_code(KC_VOLD);
                 }
                 break;
 
-            default:
+            case 1:
                 // other layers - =/+ (quals/plus) (CW) and -/_ (minus/underscore) (CCW)
                 if (clockwise) {
                     tap_code(KC_EQL);
@@ -347,20 +359,20 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     } else if (index == 1) {
         switch (get_highest_layer(layer_state)) {
             case 0:
-                // main layer - volume up (CW) and down (CCW)
+                // main layer - scrolling through search results
                 if (clockwise) {
-                    tap_code(KC_VOLU);
+                    tap_code(KC_F3);
                 } else {
-                    tap_code(KC_VOLD);
+                    tap_code16(S(KC_F3));
                 }
                 break;
 
-            default:
+            case 1:
                 // other layers - right (CW) and left (CCW)
                 if (clockwise) {
-                    tap_code(KC_RIGHT);
+                    tap_code(KC_PGDN);
                 } else {
-                    tap_code(KC_LEFT);
+                    tap_code(KC_PGUP);
                 }
                 break;
         }
