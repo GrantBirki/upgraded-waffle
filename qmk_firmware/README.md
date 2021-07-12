@@ -10,6 +10,8 @@ To use the `./run.sh` command, please ensure you have the following installed an
 - Docker-compose
 - Some flavor of bash (WSL or native Linux)
 
+Tip: If you are on windows, you can follow this official guide to install all of the above -> [guide](https://docs.docker.com/docker-for-windows/install/)
+
 ### Steps
 
 1. From this directory, run the following command: `./run.sh`
