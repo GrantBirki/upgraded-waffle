@@ -6,6 +6,10 @@ A smol waffle with clicky buttons of power
 
 Clone this repo to your home directory.
 
+### QMK Usage
+
+To build a keyboard firmware hex file with QMK, see the nested documentation [here](qmk_firmware/README.md)
+
 ### Directory Structure
 
 ```text
