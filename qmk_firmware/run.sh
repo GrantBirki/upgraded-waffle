@@ -12,4 +12,5 @@ docker-compose run --rm qmk_firmware -kb $keyboard -km $keymap
 
 echo -e "\e[32m[#] qmk_firmware container is now running!\e[0m"
 
-echo -e "\e[32m[+] You should now see a <filename>.hex.output file in your current working directory\nPlease remove the .output from the filename and open in QMK Configurator to flash your keyboard! \e[0m"
+mv *.hex.output "$keyboard-$keymap.hex" 
+echo -e "\e[32m[#] $keyboard-$keymap.hex saved to qmk_firmware folder\e[0m"
