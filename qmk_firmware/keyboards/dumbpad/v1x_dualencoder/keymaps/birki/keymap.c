@@ -15,6 +15,10 @@
  */
 
 #include QMK_KEYBOARD_H
+#include <stdbool.h>
+
+// For toggling the middle LED
+bool led_01_toggle = false;
 
 enum custom_keycodes {
     KEY_0 = SAFE_RANGE,
@@ -145,9 +149,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case KEY_8:
         if (record->event.pressed) {
             // when keycode KEY_8 is pressed
+
+            // Logic for toggling the middle LED
+            if (led_01_toggle){
+                writePinLow(LED_01);
+                led_01_toggle = false;
+            }
+            else {
+                writePinHigh(LED_01);
+                led_01_toggle = true;
+            }
+
             register_code(KC_LCTL);
             register_code(KC_LALT);
             register_code(KC_P8);
+            
         } else {
             // when keycode KEY_8 is released
             unregister_code(KC_LCTL);
@@ -275,7 +291,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*
             BASE LAYER
     /-----------------------------------------------------`
-    |             |  KEY_12 |  KEY_1  |  KEY_14 |  TO(1)  |
+    |             |  KEY_12 | KC_MPRV | KC_MNXT |  TO(1)  |
     |             |---------|---------|---------|---------|
     |             |  KEY_8  |  KEY_9  |  KEY_10 |  KEY_11 |
     |             |---------|---------|---------|---------|
@@ -285,7 +301,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     \-----------------------------------------------------'
     */
     [0] = LAYOUT(
-                     KEY_12,    KEY_13,   KEY_14,   TO(1),
+                     KEY_12,    KC_MPRV,   KC_MNXT,   TO(1),
                      KEY_8,     KEY_9,    KEY_10,   KEY_11,
                      KEY_4,     KEY_5,    KEY_6,    KEY_7,
         KEY_16,      KEY_0,     KEY_1,    KEY_2,    KEY_3
