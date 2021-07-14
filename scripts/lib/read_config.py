@@ -1,8 +1,6 @@
 from yaml import safe_load, YAMLError
 from os.path import expanduser
 
-
-
 def read_config():
     home = expanduser("~")
     path = 'upgraded-waffle/scripts/config.yml'
