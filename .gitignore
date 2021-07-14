@@ -2,3 +2,4 @@
 *.hex.output
 .vscode
 config.yml
+__pycache__
