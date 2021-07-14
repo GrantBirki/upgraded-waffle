@@ -57,6 +57,8 @@ void matrix_init_kb(void) {
         if (i < 1) {
             wait_ms(led_delay_ms);
         }
+    // Turn on far left LED
+    writePinHigh(LED_02);
     }
 
     matrix_init_user();
