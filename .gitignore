@@ -1,4 +1,4 @@
 *.hex
 *.hex.output
 .vscode
-creds.env
+config.yml
