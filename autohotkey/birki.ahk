@@ -8,9 +8,10 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; If you wish to use this script, change all paths to your own home directory
 ;
 
-^!NumpadIns::
-MsgBox, 0
-return
+; Disabled
+;^!NumpadIns::
+;MsgBox, 0
+;return
 
 ^!NumpadEnd::
 MsgBox, 1
