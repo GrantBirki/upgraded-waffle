@@ -5,11 +5,13 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ;
 ; AutoHotkey script file for Birki
+; If you wish to use this script, change all paths to your own home directory
 ;
 
-^!NumpadIns::
-MsgBox, 0
-return
+; Disabled
+;^!NumpadIns::
+;MsgBox, 0
+;return
 
 ^!NumpadEnd::
 MsgBox, 1
@@ -28,7 +30,7 @@ MsgBox, 4
 return
 
 ^!NumpadClear::
-MsgBox, 5
+Run python.exe C:\Users\Birki\upgraded-waffle\scripts\5_pi_hole_disable.py
 return
 
 ^!NumpadRight::
