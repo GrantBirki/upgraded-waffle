@@ -3,3 +3,4 @@
 .vscode
 config.yml
 __pycache__
+autokey/*hidden*
