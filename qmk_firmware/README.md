@@ -23,3 +23,23 @@ Tip: If you are on windows, you can follow this official guide to install all of
 #### Explanation
 
 The following steps above just built a Docker container. This docker container copied all the files from this directory and attached a volume to write the file back into our repo. It then built and compiled the keyboard/macro we provided during runtime. This is fed through `qmk compile` and then saved to our working directory as `<filename>.hex.output`. We then have to rename this file to remove the `.output` to use it within QMK Toolbox for flashing.
+
+### Installing my custom keymap
+
+> These are my own instructions for installing my custom keymap
+
+My custom keymaps are located here: [birki](keyboards/dumbpad/v1x_dualencoder/keymaps/birki/keymap.c)
+
+Edit the keymap to your liking and then run the command below:
+
+```bash
+$ ./run.sh
+Enter Keyboard (Ex: dumbpad) -kb: dumbpad
+Enter Keymap (Ex: default) -km: birki
+```
+
+Open QMK Toolbox and flash using the hex file compiled and stored in this directory:
+
+![demo](demo.png)
+
+> In my case, the compiled hex file is named `dumbpad-birki.hex`
