@@ -150,16 +150,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (record->event.pressed) {
             // when keycode KEY_8 is pressed
 
-            // Logic for toggling the middle LED
-            if (led_01_toggle){
-                writePinLow(LED_01);
-                led_01_toggle = false;
-            }
-            else {
-                writePinHigh(LED_01);
-                led_01_toggle = true;
-            }
-
             register_code(KC_LCTL);
             register_code(KC_LALT);
             register_code(KC_P8);
@@ -271,6 +261,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case KEY_16:
         if (record->event.pressed) {
             // when keycode KEY_16 is pressed
+
+             // Logic for toggling the middle LED
+            if (led_01_toggle){
+                writePinLow(LED_01);
+                led_01_toggle = false;
+            }
+            else {
+                writePinHigh(LED_01);
+                led_01_toggle = true;
+            }
+
             register_code(KC_LCTL);
             register_code(KC_LALT);
             register_code(KC_LSFT);
