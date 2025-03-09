@@ -45,163 +45,109 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case KEY_0:
         if (record->event.pressed) {
             // when keycode KEY_0 is pressed
-            register_code(KC_LCTL);
-            register_code(KC_LALT);
-            register_code(KC_P0);
+            register_code(KC_F13);
         } else {
             // when keycode KEY_0 is released
-            unregister_code(KC_LCTL);
-            unregister_code(KC_LALT);
-            unregister_code(KC_P0);
+            unregister_code(KC_F13);
         }
         break;
     case KEY_1:
         if (record->event.pressed) {
             // when keycode KEY_1 is pressed
-            register_code(KC_LCTL);
-            register_code(KC_LALT);
-            register_code(KC_P1);
+            register_code(KC_F14);
         } else {
             // when keycode KEY_1 is released
-            unregister_code(KC_LCTL);
-            unregister_code(KC_LALT);
-            unregister_code(KC_P1);
+            unregister_code(KC_F14);
         }
         break;
     case KEY_2:
         if (record->event.pressed) {
             // when keycode KEY_2 is pressed
-            register_code(KC_LCTL);
-            register_code(KC_LALT);
-            register_code(KC_P2);
+            register_code(KC_F15);
         } else {
             // when keycode KEY_2 is released
-            unregister_code(KC_LCTL);
-            unregister_code(KC_LALT);
-            unregister_code(KC_P2);
+            unregister_code(KC_F15);
         }
         break;
     case KEY_3:
         if (record->event.pressed) {
             // when keycode KEY_3 is pressed
-            register_code(KC_LCTL);
-            register_code(KC_LALT);
-            register_code(KC_P3);
+            register_code(KC_F16);
         } else {
             // when keycode KEY_3 is released
-            unregister_code(KC_LCTL);
-            unregister_code(KC_LALT);
-            unregister_code(KC_P3);
+            unregister_code(KC_F16);
         }
         break;
     case KEY_4:
         if (record->event.pressed) {
             // when keycode KEY_4 is pressed
-            register_code(KC_LCTL);
-            register_code(KC_LALT);
-            register_code(KC_P4);
+            register_code(KC_F17);
         } else {
             // when keycode KEY_4 is released
-            unregister_code(KC_LCTL);
-            unregister_code(KC_LALT);
-            unregister_code(KC_P4);
+            unregister_code(KC_F17);
         }
         break;
     case KEY_5:
         if (record->event.pressed) {
             // when keycode KEY_5 is pressed
-            register_code(KC_LCTL);
-            register_code(KC_LALT);
-            register_code(KC_P5);
+            register_code(KC_F18);
         } else {
             // when keycode KEY_5 is released
-            unregister_code(KC_LCTL);
-            unregister_code(KC_LALT);
-            unregister_code(KC_P5);
+            unregister_code(KC_F18);
         }
         break;
     case KEY_6:
         if (record->event.pressed) {
             // when keycode KEY_6 is pressed
-            register_code(KC_LCTL);
-            register_code(KC_LALT);
-            register_code(KC_P6);
+            register_code(KC_F19);
         } else {
             // when keycode KEY_6 is released
-            unregister_code(KC_LCTL);
-            unregister_code(KC_LALT);
-            unregister_code(KC_P6);
+            unregister_code(KC_F19);
         }
         break;
     case KEY_7:
         if (record->event.pressed) {
             // when keycode KEY_7 is pressed
-            register_code(KC_LCTL);
-            register_code(KC_LALT);
-            register_code(KC_P7);
+            register_code(KC_F20);
         } else {
             // when keycode KEY_7 is released
-            unregister_code(KC_LCTL);
-            unregister_code(KC_LALT);
-            unregister_code(KC_P7);
+            unregister_code(KC_F20);
         }
         break;
     case KEY_8:
         if (record->event.pressed) {
             // when keycode KEY_8 is pressed
-
-            register_code(KC_LCTL);
-            register_code(KC_LALT);
-            register_code(KC_P8);
-            
+            register_code(KC_F20);
         } else {
             // when keycode KEY_8 is released
-            unregister_code(KC_LCTL);
-            unregister_code(KC_LALT);
-            unregister_code(KC_P8);
+            unregister_code(KC_F20);
         }
         break;
     case KEY_9:
         if (record->event.pressed) {
             // when keycode KEY_9 is pressed
-            register_code(KC_LCTL);
-            register_code(KC_LALT);
-            register_code(KC_P9);
+            register_code(KC_F21);
         } else {
             // when keycode KEY_9 is released
-            unregister_code(KC_LCTL);
-            unregister_code(KC_LALT);
-            unregister_code(KC_P9);
+            unregister_code(KC_F21);
         }
         break;
     case KEY_10:
         if (record->event.pressed) {
             // when keycode KEY_10 is pressed
-            register_code(KC_LCTL);
-            register_code(KC_LALT);
-            register_code(KC_LSFT);
-            register_code(KC_P0);
+            register_code(KC_F22);
         } else {
             // when keycode KEY_10 is released
-            unregister_code(KC_LCTL);
-            unregister_code(KC_LALT);
-            unregister_code(KC_LSFT);
-            unregister_code(KC_P0);
+            unregister_code(KC_F22);
         }
         break;
     case KEY_11:
         if (record->event.pressed) {
             // when keycode KEY_11 is pressed
-            register_code(KC_LCTL);
-            register_code(KC_LALT);
-            register_code(KC_LSFT);
-            register_code(KC_P1);
+            register_code(KC_F23);
         } else {
             // when keycode KEY_11 is released
-            unregister_code(KC_LCTL);
-            unregister_code(KC_LALT);
-            unregister_code(KC_LSFT);
-            unregister_code(KC_P1);
+            unregister_code(KC_F23);
         }
         break;
     case KEY_12:
@@ -272,16 +218,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 led_01_toggle = true;
             }
 
-            register_code(KC_LCTL);
-            register_code(KC_LALT);
-            register_code(KC_LSFT);
-            register_code(KC_P6);
+            register_code(KC_F24);
         } else {
             // when keycode KEY_16 is released
-            unregister_code(KC_LCTL);
-            unregister_code(KC_LALT);
-            unregister_code(KC_LSFT);
-            unregister_code(KC_P6);
+            unregister_code(KC_F24);
         }
         break;
     }
