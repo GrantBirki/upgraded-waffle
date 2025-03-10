@@ -51,6 +51,6 @@ Then after a second reboot, I installed drivers (again) and was able to flash my
 
 Because this is all so foreign to me, I even removed my actual keyboard to avoid the risk of destroying it on accident.
 
-Speaking about my actual keyboard, that doesn't quite work yet for this project. I did at one point but that was years ago and I forget why it doesn't work now. This file `qmk_firmware/keyboards/dztech/dz60rgb_ansi/keymaps/default/keymap.c` is empty with `<removed>` and it just fails 🤷‍♂️.
+Speaking about my actual keyboard, that doesn't quite work yet for this project. I did at one point but that was years ago and I forget why it doesn't work now. This file [`keyboards/dztech/dz60rgb_ansi/keymaps/default/keymap.c`](keyboards/dztech/dz60rgb_ansi/keymaps/default/keymap.c) is empty with `<removed>` and it just fails 🤷‍♂️.
 
 At some point, if my main keyboard dies, I will need to fully rebuild this project and make it actually usable for my keyboard. I will certainly keep the current docker build setup as it is quite nice. I can build a `.hex` file for my dumbpad on a mac, copy it to my windows device, boot up QMK, and still get a successful flash. So that is cool.
