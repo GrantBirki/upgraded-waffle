@@ -15,14 +15,13 @@ Tip: If you are on windows, you can follow this official guide to install all of
 ### Steps
 
 1. From this directory, run the following command: `./run.sh`
-2. Follow the prompts - Example: `-kb: dumbpad` and `-km default`
-3. Check for the output hex file in this directory. Example: `dumbpad_v1x_dualencoder_default.hex.output`
-4. Rename/remove the `.output` from the filename to flash with QMK Toolbox
-5. 🎉
+2. Follow the prompts - Example: `-kb: dumbpad` and `-km birki`
+3. Check for the output hex file in this directory. Example: `dumbpad-birki.hex`
+4. 🎉
 
 #### Explanation
 
-The following steps above just built a Docker container. This docker container copied all the files from this directory and attached a volume to write the file back into our repo. It then built and compiled the keyboard/macro we provided during runtime. This is fed through `qmk compile` and then saved to our working directory as `<filename>.hex.output`. We then have to rename this file to remove the `.output` to use it within QMK Toolbox for flashing.
+The following steps above just built a Docker container. This docker container copied all the files from this directory and attached a volume to write the file back into our repo. It then built and compiled the keyboard/macro we provided during runtime. This is fed through `qmk compile` and then saved to our working directory as `<filename>.hex.output`. It is then renamed to remove the `.output` to use it within QMK Toolbox for flashing.
 
 ### Installing my custom keymap
 
@@ -43,3 +42,15 @@ Open QMK Toolbox and flash using the hex file compiled and stored in this direct
 ![demo](demo.png)
 
 > In my case, the compiled hex file is named `dumbpad-birki.hex`
+
+### Bonus Notes
+
+I needed to re-installed QMK Toolbox, run it as administrator and installed all drivers. I even had to reboot my PC once to finish the install I think.
+
+Then after a second reboot, I installed drivers (again) and was able to flash my dumbpad. There is a little button thingy I had to press to get it into flashing mode.
+
+Because this is all so foreign to me, I even removed my actual keyboard to avoid the risk of destroying it on accident.
+
+Speaking about my actual keyboard, that doesn't quite work yet for this project. I did at one point but that was years ago and I forget why it doesn't work now. This file [`keyboards/dztech/dz60rgb_ansi/keymaps/default/keymap.c`](keyboards/dztech/dz60rgb_ansi/keymaps/default/keymap.c) is empty with `<removed>` and it just fails 🤷‍♂️.
+
+At some point, if my main keyboard dies, I will need to fully rebuild this project and make it actually usable for my keyboard. I will certainly keep the current docker build setup as it is quite nice. I can build a `.hex` file for my dumbpad on a mac, copy it to my windows device, boot up QMK, and still get a successful flash. So that is cool.
